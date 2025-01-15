@@ -1,5 +1,5 @@
 const db = require('../config/firebase');
-
+import utilController from './utils/controllerUtils/genericControllerMethods';
 
 const getEmployees = async (req, res) => {
     try {
@@ -114,4 +114,6 @@ const addEmployee = async (req, res) => {
     }
 };
 
-module.exports = {addEmployee, getEmployeeById, getEmployees}; 
+const updateEmployee = utilController.updateHandler('Employees');
+
+module.exports = { addEmployee, getEmployeeById, getEmployees, updateEmployee }; 

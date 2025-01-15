@@ -1,4 +1,5 @@
 const { db } = require('../config/firebase');
+import utilController from './utils/controllerUtils/genericControllerMethods';
 
 // Fetch body by Admistratice body Id
 const getAdministrativeBodyById = async (req, res) => {
@@ -116,4 +117,9 @@ const addAdministrativeBody = async (req, res) => {
     }
 };
 
-module.exports = { getAdministrativeBodyById, getAdministrativeBodies, addAdministrativeBody };
+const updateAdministrativeBody = utilController.updateHandler('administrativeBodies');
+
+const deleteAdministrativeBody = utilController.deleteHandler('administrativeBodies');
+
+
+module.exports = { getAdministrativeBodyById, getAdministrativeBodies, addAdministrativeBody, updateAdministrativeBody, deleteAdministrativeBody };

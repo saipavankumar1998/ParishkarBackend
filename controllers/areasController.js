@@ -1,4 +1,5 @@
 const { db } = require('../config/firebase');
+import utilController from './utils/controllerUtils/genericControllerMethods';
 
 ///Get area by ID
 const getAreaById = async (req, res) => {
@@ -118,4 +119,6 @@ const addArea = async (req, res) => {
     }
 };
 
-module.exports = { getAreaById, getAreas, addArea };
+const updateArea = utilController.updateHandler('Areas');
+
+module.exports = { getAreaById, getAreas, addArea, updateArea, deleteArea };

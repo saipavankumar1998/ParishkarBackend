@@ -1,4 +1,5 @@
 const db = require('../config/firebase');
+import utilController from './utils/controllerUtils/genericControllerMethods';
 
 //Get all issues
 const getIssues = async (req, res) => {
@@ -119,5 +120,9 @@ const addIssue = async (req, res) => {
     }
 };
 
+const updateIssue = utilController.updateHandler('Issues');
 
-module.exports = { addIssue, getIssueById, getIssues };
+const deleteIssue = utilController.deleteHandler('Issues');
+
+
+module.exports = { addIssue, getIssueById, getIssues, updateIssue, deleteIssue };

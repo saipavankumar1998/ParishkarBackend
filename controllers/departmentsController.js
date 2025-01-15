@@ -1,4 +1,5 @@
 const { db } = require('../config/firebase');
+import utilController from './utils/controllerUtils/genericControllerMethods';
 
 // Add a new Department
 const addDepartment = async (req, res) => {
@@ -115,5 +116,7 @@ const getDepartments = async (req, res) => {
     }
 };
 
-module.exports = { addDepartment, getDepartmentById, getDepartments };
+const updateDepartment = utilController.updateHandler('Departments');
+
+module.exports = { addDepartment, getDepartmentById, getDepartments, updateDepartment };
 

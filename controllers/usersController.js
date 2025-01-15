@@ -1,4 +1,5 @@
 const { db } = require('../config/firebase');
+import utilController from './utils/controllerUtils/genericControllerMethods';
 
 // Fetch user by UserId
 const getUserById = async (req, res) => {
@@ -80,4 +81,8 @@ const addUser = async (req, res) => {
     }
 };
 
-module.exports = { getUserById, getUsers, addUser };
+const updateUser = utilController.updateHandler('users'); 
+
+const deleteUser = utilController.deleteHandler('users');
+
+module.exports = { getUserById, getUsers, addUser, updateUser, deleteUser };

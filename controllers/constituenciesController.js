@@ -1,4 +1,5 @@
 const { db } = require('../config/firebase');
+import utilController from './utils/controllerUtils/genericControllerMethods';
 
 // Add a new Constituency
 const addConstituency = async (req, res) => {
@@ -118,4 +119,6 @@ const getConstituencies = async (req, res) => {
     }
 };
 
-module.exports = { addConstituency, getConstituencyById, getConstituencies };
+const updateConstituency = utilController.updateHandler('Constituencies');
+
+module.exports = { addConstituency, getConstituencyById, getConstituencies, updateConstituency };
