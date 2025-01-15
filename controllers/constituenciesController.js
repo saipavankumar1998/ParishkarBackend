@@ -1,5 +1,5 @@
 const { db } = require('../config/firebase');
-import utilController from './utils/controllerUtils/genericControllerMethods';
+import utilController from './controllerUtils/genericControllerMethods';
 
 // Add a new Constituency
 const addConstituency = async (req, res) => {

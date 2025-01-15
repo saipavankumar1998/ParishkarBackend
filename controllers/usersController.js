@@ -1,5 +1,5 @@
 const { db } = require('../config/firebase');
-import utilController from './utils/controllerUtils/genericControllerMethods';
+import utilController from './controllerUtils/genericControllerMethods';
 
 // Fetch user by UserId
 const getUserById = async (req, res) => {
